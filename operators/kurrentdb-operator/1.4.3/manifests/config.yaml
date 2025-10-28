@@ -1,0 +1,17 @@
+---
+# Source: kurrentdb-operator/templates/config.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kurrentdb-operator
+  annotations:
+  labels:
+    app.kubernetes.io/created-by: kurrent
+    app.kubernetes.io/part-of: kurrentdb-operator
+data:
+  config.yaml: |-
+    logging:
+      level: info
+    license:
+      secretName: kurrentdb-operator
+    dnsImage: docker.kurrent.io/kurrent-latest/dns@sha256:99357e7e8e40c01d5af5d20312298c8d8617ca34b7486a40883b32cbbec864d7
